@@ -22,7 +22,9 @@ productInfoDiv.addEventListener("click", (e)=> {
 if (e.target.className == "fa-solid fa-minus") {
   if (e.target.parentElement.querySelector(".quantity").innerText>1){
   e.target.parentElement.querySelector(".quantity").innerText--;
-  console.log("minus");
+    e.target.parentElement.querySelector(".quantity").innerText--;
+  calculateProductPrice()
+  calculateCartPrice()
   }else {
     if((confirm("product will be removed??"))){
       e.target.parentElement.parentElement.parentElement.remove()
@@ -33,15 +35,26 @@ if (e.target.className == "fa-solid fa-minus") {
 
 }else if(e.target.classList.contains("fa-plus")) {
   e.target.previousElementSibling.innerText++
-  console.log("add")
+  calculateProductPrice();
+  calculateCartPrice();
 }else if(e.target.className=="remove-product"){
   e.target.parentElement.parentElement.parentElement.remove()
+  calculateCartPrice();
+
 }else {
   console.log("bos")
 }
   
   
 })
+
+const calculateProductPrice =function(){
+
+}
+
+const calculateCartPrice = ()=> {
+
+}
 
 
 
