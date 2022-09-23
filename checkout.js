@@ -58,7 +58,11 @@ const calculateProductPrice =function(clickedBtn){
   const quantity = productInfoDiv.querySelector(".quantity").innerText
   console.log(quantity)
 
-  productInfoDiv.querySelector(".product-line-price").innerText = (price * quantity).toFixed(2)
+  const productTotalDiv = productInfoDiv.querySelector(".product-line-price")
+
+  productTotalDiv.innerText = price * quantity
+
+
 
   
   
