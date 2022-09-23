@@ -14,11 +14,23 @@ window.onload = ()=> {
  sessionStorage.setItem("shippingPrice", shippingPrice)
  sessionStorage.setItem("shippingFreePrice", shippingFreePrice)
 
-
-
-
-
 }
+
+const productInfoDiv = document.querySelector(".products")
+
+productInfoDiv.addEventListener("click", (e)=> {
+if (e.target.className == "fa-solid fa-minus") {
+  console.log("minus")
+}else if(e.target.classList.contains("fa-plus")) {
+  console.log("add")
+}else if(e.target.className=="remove-product"){
+  console.log("remove")
+}else {
+  console.log("bos")
+}
+  
+  
+})
 
 
 
