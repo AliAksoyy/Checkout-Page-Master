@@ -23,7 +23,7 @@ if (e.target.className == "fa-solid fa-minus") {
   if (e.target.parentElement.querySelector(".quantity").innerText>1){
   e.target.parentElement.querySelector(".quantity").innerText--;
     e.target.parentElement.querySelector(".quantity").innerText--;
-  calculateProductPrice()
+  calculateProductPrice(e.target)
   calculateCartPrice()
   }else {
     if((confirm("product will be removed??"))){
@@ -35,7 +35,7 @@ if (e.target.className == "fa-solid fa-minus") {
 
 }else if(e.target.classList.contains("fa-plus")) {
   e.target.previousElementSibling.innerText++
-  calculateProductPrice();
+  calculateProductPrice(e.target);
   calculateCartPrice();
 }else if(e.target.className=="remove-product"){
   e.target.parentElement.parentElement.parentElement.remove()
@@ -48,7 +48,24 @@ if (e.target.className == "fa-solid fa-minus") {
   
 })
 
-const calculateProductPrice =function(){
+const calculateProductPrice =function(clickedBtn){
+  
+  const productInfoDiv = clickedBtn.parentElement.parentElement
+
+  const price =productInfoDiv.querySelector(".product-price strong").innerText
+  console.log(price)
+  
+  const quantity = productInfoDiv.querySelector(".quantity").innerText
+  console.log(quantity)
+
+  productInfoDiv.querySelector(".product-line-price").innerText = (price * quantity).toFixed(2)
+
+  
+  
+
+
+  
+
 
 }
 
