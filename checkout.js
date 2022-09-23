@@ -26,7 +26,7 @@ if (e.target.className == "fa-solid fa-minus") {
   }else {
     if((confirm("product will be removed??"))){
       e.target.parentElement.parentElement.parentElement.remove()
-      // e.target.closest(".product").remove()
+     
     }
   }
   
@@ -35,7 +35,7 @@ if (e.target.className == "fa-solid fa-minus") {
   e.target.previousElementSibling.innerText++
   console.log("add")
 }else if(e.target.className=="remove-product"){
-  console.log("remove")
+  e.target.parentElement.parentElement.parentElement.remove()
 }else {
   console.log("bos")
 }
